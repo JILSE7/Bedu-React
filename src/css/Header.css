@@ -1,10 +1,19 @@
 .header {
-  display: inline;
   text-align: center;
 }
 
 .card-header {
-  margin: 10px;
+  margin-top: 10px;
   box-shadow: 0 8px 5px -5px rgba(140, 150, 150, 0.3);
   
+}
+
+.span-header{
+  color: green;
+}
+
+.task{
+  color: gray;
+  font-weight: bold;
+  font-style: italic;
 }

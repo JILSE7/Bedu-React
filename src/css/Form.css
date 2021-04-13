@@ -7,14 +7,15 @@
 }
 
 .form-button {
-    background-color: rgb(50, 205, 220);
-    border-color: rgb(50, 205, 220);
+    background-color: rgb(33, 132, 6);
+
     color: rgb(255, 255, 255);
     transition: all 0.3s ease;
 }
 .form-button:hover, .form-button:active, .form-button:focus {
-    background-color: rgb(0, 160, 175);
-    border-color: rgb(0, 160, 175);
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(33, 132, 6);
+    color: rgb(33, 132, 6);
 }
 .form-button:disabled {
     background-color: rgb(200, 200, 200);

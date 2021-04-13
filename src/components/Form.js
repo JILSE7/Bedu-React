@@ -1,26 +1,22 @@
 import React, { useState } from 'react';
 import '../css/Form.css';
 
-const Form = ({settodo,todo}) => {
+const Form = ({settodos,todos}) => {
 
+  console.log(settodos);
   const handleAddTodo = (e)=>{
     e.preventDefault();
     const newTodo = {done: false, title: e.target.firstChild.value};
-    console.log(newTodo);
-    settodo([...todo, newTodo])
+    settodos([...todos, newTodo])
+    e.target.reset();
   }
 
-
-
-
- 
   return (
     <form className="form" onSubmit={handleAddTodo} >
       <input 
         className="form-input" 
         type="text" 
         placeholder="Escribe una tarea..."
-        name='said'
       />
       <button 
         className="form-button"

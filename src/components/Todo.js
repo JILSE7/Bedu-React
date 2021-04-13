@@ -3,29 +3,34 @@ import "../css/Todo.css";
 import Checkmark from './Checkmark.js';
 
 
-export const Todo = ({todo, settodo, task})=> {
-  console.log(task);
-  const handleClick = () =>{
+export const Todo = ({todos, settodos, todo})=> {
 
-    settodo(todo.map(to => to.title === task.title {
-      {title:task.title, donde: !task.done}
-    }
-      ))
-    
+  const handleToogle = () =>{
+   const toggle = todos.map(t => (t.title === todo.title) ? {...t, done:!(t.done)} : t)
+   settodos(toggle)    
 
-    settodo([{...todo, task}])
-    
+  }
+
+  const handleDelete = (e) =>{
+    e.preventDefault();
+    const animation = e.target.parentElement.parentElement.classList;
+    animation.remove('animate__bounceInDown');
+    animation.add('animate__fadeOutRight')
+    console.log(animation);
+    setTimeout(() => {
+      settodos(todos.filter(t => t.title !== todo.title))     
+    }, 700);
+ 
+
   }
 
 
     return(
-    <div className="list-item">
-      <Checkmark todo={todo} settodo={settodo} handleClick={handleClick} />
-      <p className={`${task.done ? 'done' : ''}`}>{task.title}</p>
+    <div className="list-item animate__animated animate__bounceInDown">
+      <Checkmark todo={todo} settodo={settodos} handleToogle={handleToogle} />
+      <p className={`${todo.done ? 'done' : ''}`}>{todo.title}</p>
       <div className="buttons">
-        <button className="delete">
-          {'\u292b'}
-        </button>
+        <button className="delete" onClick={handleDelete}> {'\u292b'} </button>
       </div>
     </div>
     );
