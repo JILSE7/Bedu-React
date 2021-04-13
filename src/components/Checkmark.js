@@ -1,12 +1,13 @@
 import React from 'react';
 
-const Checkmark = (props) => {
+const Checkmark = ({todo,settodo, handleClick}) => {
+ 
   return (
     <>
       <input type="checkbox"
           className="ok"
-          defaultChecked={props.done}
-          onChange={props.handleClick}
+          defaultChecked={todo.done}
+          onClick={handleClick}
       />
     </>
   )
